@@ -102,6 +102,98 @@
             "sourceFileMap": {
                 "/workspaces/webproxy_lab_docker": "${workspaceFolder}"
             }
+        },
+        {
+            "name": "Debug Echo Practice Active File",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/webproxy-lab/echo_practice",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "Echo practice build active file",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "sourceFileMap": {
+                "/workspaces/webproxy_lab_docker": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "Debug Echo Server",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/webproxy-lab/echo_practice/echoserveri",
+            "args": [
+                "15213"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/webproxy-lab/echo_practice",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "Echo practice build server",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "sourceFileMap": {
+                "/workspaces/webproxy_lab_docker": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "Debug Echo Client",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/webproxy-lab/echo_practice/echoclient",
+            "args": [
+                "localhost",
+                "15213"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/webproxy-lab/echo_practice",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "Echo practice build client",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "sourceFileMap": {
+                "/workspaces/webproxy_lab_docker": "${workspaceFolder}"
+            }
         }
     ]
 }

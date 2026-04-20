@@ -7,7 +7,7 @@
             "command": "cd ${workspaceFolder}/webproxy-lab/tiny && make",
             "group": {
                 "kind": "build",
-                "isDefault": true
+                "isDefault": false
             },
             "presentation": {
                 "reveal": "always",
@@ -56,7 +56,7 @@
             "command": "cd ${workspaceFolder}/webproxy-lab && make",
             "group": {
                 "kind": "build",
-                "isDefault": true
+                "isDefault": false
             },
             "presentation": {
                 "reveal": "always",
@@ -98,6 +98,68 @@
                 "panel": "new"
             },
             "problemMatcher": []
+        },
+        {
+            "label": "Echo practice build active file",
+            "type": "shell",
+            "command": "gcc -O0 -Wall -I ${workspaceFolder}/webproxy-lab -g ${file} ${workspaceFolder}/webproxy-lab/csapp.c -o ${fileDirname}/${fileBasenameNoExtension} -lpthread",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/webproxy-lab/echo_practice"
+            }
+        },
+        {
+            "label": "Echo practice build server",
+            "type": "shell",
+            "command": "gcc -O0 -Wall -I ${workspaceFolder}/webproxy-lab -g ${workspaceFolder}/webproxy-lab/echo_practice/echoserveri.c ${workspaceFolder}/webproxy-lab/echo_practice/echo.c ${workspaceFolder}/webproxy-lab/csapp.c -o ${workspaceFolder}/webproxy-lab/echo_practice/echoserveri -lpthread",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/webproxy-lab/echo_practice"
+            }
+        },
+        {
+            "label": "Echo practice build client",
+            "type": "shell",
+            "command": "gcc -O0 -Wall -I ${workspaceFolder}/webproxy-lab -g ${workspaceFolder}/webproxy-lab/echo_practice/echoclient.c ${workspaceFolder}/webproxy-lab/csapp.c -o ${workspaceFolder}/webproxy-lab/echo_practice/echoclient -lpthread",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/webproxy-lab/echo_practice"
+            }
+        },
+        {
+            "label": "Echo practice clean",
+            "type": "shell",
+            "command": "rm -f echoserveri echoclient *.o *~",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": [],
+            "options": {
+                "cwd": "${workspaceFolder}/webproxy-lab/echo_practice"
+            }
         }
     ]
 }
