@@ -39,3 +39,7 @@ int main(int argc, char **argv)
     Close(connfd); // line:netp:tiny:close
   }
 }
+//해서는 안되는 것
+// /home.html을 보고 proxy가 직접 파일 열기
+// /cigi-bin/adder르 ㄹ 보고 proxy가 직접 cgi 실행하기
+// content-type을 proxy 가 판단하기

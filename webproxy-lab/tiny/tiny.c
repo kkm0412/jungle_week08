@@ -149,6 +149,7 @@ int parse_uri(char *uri, char *filename, char *cgiargs){
   }
 }
 
+//정적 콘텐츠를 클라이언트에게 제공하는 함수
 void serve_static(int fd, char *filename, int filesize){
   int srcfd;
   char *srcp, filetype[MAXLINE], buf[MAXBUF];
