@@ -58,7 +58,7 @@ void doit(int fd) //한개의 http 트랜잭션을 처리하는 함수
    printf("Request headers:\n");
    printf("%s", buf);
    sscanf(buf, "%s %s %s", method, uri, version);
-   if (strcasecmp(method, "GET")){
+   if (strcasecmp(method, "GET")){  //tiny 서버는 GET 요청 외에는 처리하지 않음.
       clienterror(fd, method, "501", "Not implemented",
                 "Tiny does not implement this method");
       return;
@@ -184,8 +184,11 @@ void get_filetype(char *filename, char *filetype)
       strcpy(filetype, "image/png");
   else if (strstr(filename, ".jpg"))
       strcpy(filetype, "image/jpeg");
+  else if (strstr(filename, ".mpg"))
+      strcpy(filename, "video/mpeg");
   else
       strcpy(filetype, "text/plain");
+
 }
 
 //동적콘텐츠를 클라이언트에 제공하는 함수
